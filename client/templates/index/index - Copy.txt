@@ -1,0 +1,59 @@
+<template name="ppHeader">
+  {{#contentFor "headerTitle"}}
+    <img src="/images/paxpay-logo-2.png?r201509301238" />
+  {{/contentFor}}
+</template>
+
+
+<template name="index">
+
+  {{> ppHeader}}
+
+  {{#ionView}}
+    {{#ionContent}}
+	<div class="pp-home-icons-container">
+		{{!
+		<div class="row pp-icon-row">
+			<div class="col pp-icon">
+				{{#linkTo route="login" class="pp-icon-link"}}		
+					<img src="/images/icon-login.png?r201509262221" />
+					<br/>
+					<span class="text">Login</span>
+				{{/linkTo}}				
+			</div>
+			<div class="col pp-icon">
+				<img src="/images/icon-assist.png?r201509262221" />
+				<br/>
+				<span class="text">Instant Assist</span>
+			</div>
+		</div>
+		}}
+		<div class="row pp-icon-row">
+			<div class="col pp-icon">
+				<img src="/images/icon-pay.png?r201509262221" />
+				<br/>
+				<span class="text">Farmer Registration</span>    	
+			</div>			
+			<div class="col pp-icon">
+				<img src="/images/icon-locator.png?r201509262221" />
+				<br/>
+				<span class="text">Reports &amp; Graphs</span>    	
+			</div>
+		</div>
+		{{! Holding this icon back since it's Citi branded
+		<div class="row pp-icon-row">
+			<div class="col pp-icon">
+				<img src="/images/icon-privileges.png?r201509262221" />
+				<br/>
+				<span class="text">Citibank<br/>Privileges</span>    	
+			</div>
+			<div class="col pp-icon">&nbsp;</div> 	
+		</div>
+		}}           
+    </div>
+    {{/ionContent}}
+    
+    {{> _tabs}}
+    
+  {{/ionView}}
+</template>

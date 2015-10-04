@@ -1,0 +1,49 @@
+<template name="ppHeader">
+  {{#contentFor "headerTitle"}}
+    <img src="/images/paxpay-logo-2.png?r201509301238" />
+  {{/contentFor}}
+</template>
+
+
+<template name="index">
+
+  {{> ppHeader}}
+
+  {{#ionView}}
+    {{#ionContent}}
+	<div class="pp-home-icons-container">
+		<div class="row pp-icon-row">
+			<div class="col pp-icon">
+				{{#linkTo route="registration" class="pp-icon-link"}}	
+				<img src="/images/icon-pay.png?r201509262221" />
+				<br/>
+				<span class="text">Farmer Registration</span>  
+				{{/linkTo}}				
+			</div>			
+			<div class="col pp-icon">
+                {{#linkTo route="iotacharts" class="pp-icon-link"}}
+				<img src="/images/icon-locator.png?r201509262221" />
+				<br/>
+				<span class="text">Reports &amp; Graphs</span> 
+                {{/linkTo}}	
+			</div>
+		</div>  
+		<div class="row pp-icon-row">
+			<div class="col pp-icon">
+				{{#linkTo route="farmerSearch" class="pp-icon-link"}}	
+				<img src="/images/icon-assist.png?r201510032221" />
+				<br/>
+				<span class="text">Farmers Search</span>  
+				{{/linkTo}}				
+			</div>			
+			<div class="col pp-icon">
+                &nbsp;
+			</div>
+		</div>        
+    </div>
+    {{/ionContent}}
+    
+    {{> _tabs}}
+    
+  {{/ionView}}
+</template>
