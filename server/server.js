@@ -67,21 +67,27 @@ Meteor.methods({
         
         data.id = id;
         
-        var response = Meteor.http.post("https://api-eu.clusterpoint.com/2008/iotahackday.json", 
-                      { 
-                        headers : { 'Authorization':'Basic c2FpLnAyM0BnbWFpbC5jb206OTQ5MTUyODU0OQ==' },
-                        data: data
-                      }, function(error, result) {
-                            
-                            if(!error) {
-                                console.log("Successful Insert");
-                            }
-                            else {
-                                console.log(result.content);
-                            }
-                
-                      });
+        Meteor.http.post("https://api-eu.clusterpoint.com/2008/iotahackday.json", 
+          { 
+            headers : { 'Authorization':'Basic c2FpLnAyM0BnbWFpbC5jb206OTQ5MTUyODU0OQ==' },
+            data: data
+          }, function(error, result) {
+
+                if(!error) {
+                    console.log("Successful Insert");
+                }
+                else {
+                    console.log(result.content);
+                }
+
+          });
         
         return { farmerId: (4346 + Math.floor(Math.random() * (200 - 4) + 4))}
-	}
+	},
+    
+    "sendSMS": function(data) {
+        console.log('In sendSMS() ' + data);
+        
+        //Meteor.http.post("https://igate2:d12359c0b698b0dfa1f44c39fe1d4cd4b4da694d@twilix.exotel.in/v1/Accounts/igate2/Sms/send", {  }
+    }
 });

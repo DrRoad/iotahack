@@ -11,6 +11,15 @@ Template.sendSMS.events({
         
          var smsText = $('textarea[name="smsText"]').val();
          console.debug('smsText', smsText);
+        
+        IonPopup.alert({
+          title: 'SMSes Sent',
+          template: 'Number of SMSes delivered: ' + phoneNumbers.length,
+          okText: 'Close',
+          onOk: function(event, template) {
+            Router.go('/');
+          }
+        });	        
     }
 });
 
